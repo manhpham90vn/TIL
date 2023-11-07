@@ -1,4 +1,5 @@
 # Runtime và Compile time là gì
+
 **Compile time (thời gian biên dịch):**
 - Là thời gian mà mã nguồn của chương trình của bạn được chuyển đổi từ ngôn ngữ lập trình (ví dụ: C++, Java) thành mã máy (hoặc mã trung gian tùy thuộc vào ngôn ngữ cụ thể).
 - Lỗi trong giai đoạn biên dịch sẽ ngăn việc chương trình hoạt động. Ví dụ, nếu bạn gặp phải lỗi cú pháp hoặc lỗi logic trong quá trình biên dịch, chương trình sẽ không thể chạy cho đến khi bạn sửa lỗi đó.
