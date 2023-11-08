@@ -140,5 +140,48 @@ for e in range(10):
 test = [f'{e}XXX' for e in 'Manh' if e is not '']
 print(test)
 
-list = [x + y for x in [1, 2, 3] for y in [4, 5, 6]]
-print(list)
+arrs = [x + y for x in [1, 2, 3] for y in [4, 5, 6]]
+print(arrs)
+
+# method
+def firstFunc():
+    print('Hello')
+
+print(firstFunc())
+
+def secondFunc(num1, num2):
+    return num1 + num2
+
+print(secondFunc(1, 2))
+
+# *args **kwargs
+def myFun(*args):
+    return sum(args)
+
+print(myFun(1, 2, 3, 4, 5))
+
+def myFun2(**kwargs):
+    if 'value' in kwargs:
+        print(f'value is', kwargs['value'])
+    else:
+        pass
+
+print(myFun2(value=1))
+
+# lambda expressions (map, filter)
+sum = lambda num: num + num
+print(sum(10))
+
+# lambda filter element
+arrs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+filter_arrs = list(filter(lambda x: x % 2 == 0, arrs))
+print(filter_arrs)
+
+# scope
+name = 'Manh'
+def greet():
+    # name is local scope
+    name = 'Nhat'
+
+greet()
+print(name)
