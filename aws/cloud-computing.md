@@ -1,4 +1,4 @@
-# Cloud Computing là gì?
+## Cloud Computing là gì?
 
 - Cloud Computing là một mô hình cung cấp các dịch vụ tính toán, lưu
   trữ, mạng và ứng dụng thông qua mạng Internet. Thay vì phải tự
