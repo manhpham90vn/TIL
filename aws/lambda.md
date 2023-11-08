@@ -44,49 +44,41 @@
 - cài đặt sam cli https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html
 - tạo project bằng hướng dẫn https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-hello-world.html
 - init project
-
 ```shell
 sam init
 ```
 
 - build
-
 ```shell
 sam build
 ```
 
 - build sử dụng docker
-
 ```shell
 sam build --use-container
 ```
 
 - deploy
-
 ```shell
 sam deploy --guided
 ```
 
 - sau khi deploy song thì chạy test như sau
-
 ```shell
 curl https://21bwmgd7de.execute-api.ap-southeast-1.amazonaws.com/Prod/hello/
 ```
 
 - test lambda function trên local (yêu cầu build bằng docker)
-
 ```shell
 sam local invoke HelloWorldFunction -e events/event.json
 ```
 
 - test lambda function bằng sam cli
-
 ```shell
 sam remote invoke HelloWorldFunction --stack-name sam-app
 ```
 
 - sync code
-
 ```shell
 sam sync --watch
 ```
