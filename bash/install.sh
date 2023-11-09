@@ -33,15 +33,19 @@ sudo apt install -y code
 
 # docker
 # https://docs.docker.com/engine/install/ubuntu/
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
 echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update -y
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install docker-compose
 
 # shell
 # https://ohmyz.sh/#install
@@ -53,6 +57,9 @@ sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting
 
 # go
 curl -sSL https://git.io/g-install | sh -s
+gvm # list and set version
+gvm install 1.18 # install
+go version # check
 
 # python
 # https://github.com/pyenv/pyenv/wiki#suggested-build-environment
@@ -71,11 +78,15 @@ libxmlsec1-dev \
 libffi-dev \
 liblzma-dev
 curl https://pyenv.run | bash
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
-echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+pyenv install -l # list
+pyenv install 3.6 # install
+pyenv global 3.6 # set version
+python --version # check
 
 # aws
+# https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+# https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-linux.html
+# https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html
 pyenv install 3.9
 pyenv global 3.9
 python -m pip install awscli awsebcli
@@ -84,3 +95,56 @@ wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-lin
 unzip ./aws-sam-cli-linux-x86_64.zip -d sam-cli
 cd sam-cli
 sudo ./install
+aws --version
+eb --version
+sam --version
+
+# rbenv
+sudo apt install -y git \
+curl \
+libssl-dev \
+libreadline-dev \
+zlib1g-dev \
+autoconf \
+bison \
+build-essential \
+libyaml-dev \
+libncurses5-dev \
+libffi-dev \
+libgdbm-dev
+
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+rbenv install 2.7.1 # install ruby 2.7.1
+rbenv global 2.7.1 # set global
+ruby --version # check version
+gem install bundler
+rbenv rehash
+bundle install
+
+# brew
+sudo apt install -y build-essential \
+procps \
+curl \
+file \
+git
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew --version
+brew list
+
+# fvm
+brew tap leoafarias/fvm
+brew install fvm
+fvm --version # check
+
+# bamboo
+sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
+sudo apt-get update
+sudo apt-get install ibus ibus-bamboo
+ibus restart
+
+# nodejs
+git clone https://github.com/nvm-sh/nvm.git .nvm
+nvm install 16 # install version 16
+nvm use 16 # use version 16
+node -v # check
