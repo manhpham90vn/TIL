@@ -68,14 +68,11 @@ sudo apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev curl \
 libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 pyenv install -l # list
 pyenv versions # list installed
 pyenv install 3.6 # install
 pyenv global 3.6 # set version
 python --version # check
-pyenv virtualenv 3.6 3.6 # create venv python 3.6
-pyenv activate 3.6 # active python 3.6
 
 # aws
 # https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html

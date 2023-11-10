@@ -15,7 +15,6 @@ alias gvm="$GOPATH/bin/g"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # rbenv
 # https://github.com/rbenv/rbenv#basic-git-checkout
