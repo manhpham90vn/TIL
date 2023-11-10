@@ -1,10 +1,9 @@
-PATH=/path/to/new/virtual/environment
-
 # tạo mới một venv
-python -m venv $PATH
+python -m venv .env
+pyenv virtualenv 3.7 .env
 
 # active env
-source $PATH/bin/activate
+source .env/bin/activate
 
 # install module
 pip install requests
