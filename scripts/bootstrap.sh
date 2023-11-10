@@ -1,26 +1,20 @@
 sudo apt install -y \
- curl \
- software-properties-common \
- apt-transport-https \
- ca-certificates \
  git \
- wget \
- gnupg \
  zsh \
  vim
 
 # chrome
 # https://www.ubuntuupdates.org/ppa/google_chrome
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt update -y
-sudo apt install -y google-chrome-stable
+sudo apt-get update 
+sudo apt install google-chrome-stable
 
 # keepassxc
 # https://launchpad.net/~phoerious/+archive/ubuntu/keepassxc
-sudo add-apt-repository ppa:phoerious/keepassxc -y
-sudo apt update -y
-sudo apt install -y keepassxc
+sudo add-apt-repository ppa:phoerious/keepassxc
+sudo apt update
+sudo apt install keepassxc
 
 # code
 # https://www.ubuntuupdates.org/ppa/vscode
@@ -28,24 +22,30 @@ curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microso
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
 sudo apt install apt-transport-https
-sudo apt update -y
-sudo apt install -y code
+sudo apt update
+sudo apt install code
 
 # docker
 # https://docs.docker.com/engine/install/ubuntu/
+# Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install ca-certificates curl gnupg
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
+# Add the repository to Apt sources:
 echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo apt install docker-compose
+
+# docker-compose
+# https://docs.docker.com/compose/install/standalone/
+sudo curl -SL https://github.com/docker/compose/releases/download/v2.23.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+sudo chmod 0755 /usr/local/bin/docker-compose
 
 # shell
 # https://ohmyz.sh/#install
@@ -56,6 +56,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
 
 # go
+# https://github.com/stefanmaric/g
 curl -sSL https://git.io/g-install | sh -s
 gvm # list and set version
 gvm install 1.18 # install
@@ -63,22 +64,12 @@ go version # check
 
 # python
 # https://github.com/pyenv/pyenv/wiki#suggested-build-environment
-sudo apt update
-sudo apt install -y build-essential \
-libssl-dev \
-zlib1g-dev \
-libbz2-dev \
-libreadline-dev \
-libsqlite3-dev curl \
-libncursesw5-dev \
-xz-utils \
-tk-dev \
-libxml2-dev \
-libxmlsec1-dev \
-libffi-dev \
-liblzma-dev
-curl https://pyenv.run | bash
+sudo apt update; sudo apt install build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev curl \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 pyenv install -l # list
+pyenv versions # list installed
 pyenv install 3.6 # install
 pyenv global 3.6 # set version
 python --version # check
@@ -87,8 +78,7 @@ python --version # check
 # https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 # https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-linux.html
 # https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html
-pyenv install 3.9
-pyenv global 3.9
+pip install --upgrade pip
 python -m pip install awscli awsebcli
 cd /tmp
 wget https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
@@ -100,18 +90,9 @@ eb --version
 sam --version
 
 # rbenv
-sudo apt install -y git \
-curl \
-libssl-dev \
-libreadline-dev \
-zlib1g-dev \
-autoconf \
-bison \
-build-essential \
-libyaml-dev \
-libncurses5-dev \
-libffi-dev \
-libgdbm-dev
+# https://github.com/rbenv/rbenv
+# https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-22-04
+sudo apt install git curl libssl-dev libreadline-dev zlib1g-dev autoconf bison build-essential libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev
 
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
@@ -123,27 +104,28 @@ rbenv rehash
 bundle install
 
 # brew
-sudo apt install -y build-essential \
-procps \
-curl \
-file \
-git
+# https://brew.sh/
+# https://docs.brew.sh/Homebrew-on-Linux
+sudo apt-get install build-essential procps curl file git
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew --version
 brew list
 
 # fvm
+# https://fvm.app/docs/getting_started/installation
 brew tap leoafarias/fvm
 brew install fvm
 fvm --version # check
 
 # bamboo
+# https://github.com/BambooEngine/ibus-bamboo
 sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
 sudo apt-get update
 sudo apt-get install ibus ibus-bamboo
 ibus restart
 
 # nodejs
+# https://github.com/nvm-sh/nvm#installing-and-updating
 git clone https://github.com/nvm-sh/nvm.git .nvm
 nvm install 16 # install version 16
 nvm use 16 # use version 16
