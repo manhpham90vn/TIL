@@ -1,7 +1,8 @@
 sudo apt install -y \
  git \
  zsh \
- vim
+ vim \
+ curl
 
 # chrome
 # https://www.ubuntuupdates.org/ppa/google_chrome
@@ -42,6 +43,10 @@ echo \
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+# https://docs.docker.com/engine/install/linux-postinstall/
+sudo usermod -aG docker $USER
+newgrp docker
+
 # docker-compose
 # https://docs.docker.com/compose/install/standalone/
 sudo curl -SL https://github.com/docker/compose/releases/download/v2.23.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
@@ -49,8 +54,8 @@ sudo chmod 0755 /usr/local/bin/docker-compose
 
 # shell
 # https://ohmyz.sh/#install
-sudo chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo chsh -s $(which zsh) # set zsh default shell
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
@@ -127,6 +132,11 @@ ibus restart
 # nodejs
 # https://github.com/nvm-sh/nvm#installing-and-updating
 git clone https://github.com/nvm-sh/nvm.git .nvm
-nvm install 16 # install version 16
-nvm use 16 # use version 16
+nvm install 14.15.5 # install version 14.15.5
+nvm alias default 14.15.5
+nvm use 14.15.5 # use version 14.15.5
 node -v # check
+
+# git
+git config --global user.email "manhpham90vn@icloud.com"
+git config --global user.name "Manh Pham"
