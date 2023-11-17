@@ -148,11 +148,3 @@ sudo apt update && sudo apt -y install default-jdk
 curl -fsSL https://dbeaver.io/debs/dbeaver.gpg.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg
 echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
 sudo apt update && sudo apt install dbeaver-ce
-
-# mysql
-# https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04
-sudo apt install mysql-server
-
-# postgresql
-# https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-22-04-quickstart
-sudo apt install postgresql postgresql-contrib
