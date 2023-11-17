@@ -141,3 +141,18 @@ node -v # check
 # git
 git config --global user.email "manhpham90vn@icloud.com"
 git config --global user.name "Manh Pham"
+
+# dbeaver
+# https://computingforgeeks.com/install-and-configure-dbeaver-on-ubuntu-debian/?expand_article=1
+sudo apt update && sudo apt -y install default-jdk
+curl -fsSL https://dbeaver.io/debs/dbeaver.gpg.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg
+echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
+sudo apt update && sudo apt install dbeaver-ce
+
+# mysql
+# https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04
+sudo apt install mysql-server
+
+# postgresql
+# https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-22-04-quickstart
+sudo apt install postgresql postgresql-contrib
