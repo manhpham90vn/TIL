@@ -1,5 +1,5 @@
 # install from brewfile
-brew bundle --file=~/.private/Brewfile
+brew bundle
 
 # create brew file
 brew bundle dump
