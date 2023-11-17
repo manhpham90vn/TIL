@@ -53,6 +53,24 @@ sudo chmod 666 /var/run/docker.sock
 sudo curl -SL https://github.com/docker/compose/releases/download/v2.23.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 sudo chmod 0755 /usr/local/bin/docker-compose
 
+# git
+git config --global user.email "manhpham90vn@icloud.com"
+git config --global user.name "Manh Pham"
+
+# dbeaver
+# https://computingforgeeks.com/install-and-configure-dbeaver-on-ubuntu-debian/?expand_article=1
+sudo apt update && sudo apt -y install default-jdk
+curl -fsSL https://dbeaver.io/debs/dbeaver.gpg.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg
+echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
+sudo apt update && sudo apt install dbeaver-ce
+
+# bamboo
+# https://github.com/BambooEngine/ibus-bamboo
+sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
+sudo apt-get update
+sudo apt-get install ibus ibus-bamboo
+ibus restart
+
 # shell
 # https://ohmyz.sh/#install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -123,13 +141,6 @@ brew tap leoafarias/fvm
 brew install fvm
 fvm --version # check
 
-# bamboo
-# https://github.com/BambooEngine/ibus-bamboo
-sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
-sudo apt-get update
-sudo apt-get install ibus ibus-bamboo
-ibus restart
-
 # nodejs
 # https://github.com/nvm-sh/nvm#installing-and-updating
 git clone https://github.com/nvm-sh/nvm.git .nvm
@@ -137,14 +148,3 @@ nvm install 14.15.5 # install version 14.15.5
 nvm alias default 14.15.5
 nvm use 14.15.5 # use version 14.15.5
 node -v # check
-
-# git
-git config --global user.email "manhpham90vn@icloud.com"
-git config --global user.name "Manh Pham"
-
-# dbeaver
-# https://computingforgeeks.com/install-and-configure-dbeaver-on-ubuntu-debian/?expand_article=1
-sudo apt update && sudo apt -y install default-jdk
-curl -fsSL https://dbeaver.io/debs/dbeaver.gpg.key | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/dbeaver.gpg
-echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
-sudo apt update && sudo apt install dbeaver-ce
