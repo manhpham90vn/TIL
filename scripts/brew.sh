@@ -2,4 +2,4 @@
 brew bundle
 
 # create brew file
-brew bundle dump
+brew bundle dump --force
