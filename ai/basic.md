@@ -576,6 +576,7 @@ Lưu ý rằng cộng đồng machine learning thường xuyên phát triển v�
     - **Mô tả:** Automation Studio là một giải pháp RPA của HelpSystems, tập trung vào việc tối ưu hóa và tự động hóa quy trình kinh doanh.
 
 ## Machine Learning (ML)
+
 - là một lĩnh vực trong lĩnh vực trí tuệ nhân tạo (AI) tập trung vào việc phát triển các thuật toán và mô hình máy tính có khả năng học hỏi từ dữ liệu. Mục tiêu của Machine Learning là tạo ra các hệ thống có khả năng tự động hóa quá trình học hỏi và cải thiện hiệu suất theo thời gian mà không cần phải được chương trình một cách rõ ràng.
 
 Các hệ thống Machine Learning có khả năng:
@@ -597,47 +598,57 @@ Có ba loại chính của Machine Learning:
 Ứng dụng của Machine Learning rất đa dạng và bao gồm nhiều lĩnh vực như nhận dạng hình ảnh, xử lý ngôn ngữ tự nhiên, dự đoán chuỗi thời gian, và nhiều hơn nữa.
 
 ### Các công việc mà Machine Learning có thể làm
+
 1. **Dự Đoán và Phân Loại:**
+
    - Dự đoán giá cổ phiếu, doanh số bán hàng, hoặc các giá trị trong tương lai.
    - Phân loại email là thư rác hoặc không phải thư rác.
    - Phân loại hình ảnh, nhận diện đối tượng trong video.
 
 2. **Xử Lý Ngôn Ngữ Tự Nhiên (NLP):**
+
    - Dịch ngôn ngữ tự nhiên qua các ngôn ngữ khác nhau.
    - Phân loại và phân tích ý kiến từ văn bản người dùng trên mạng xã hội.
    - Tạo ra tổ chức và trích xuất thông tin từ văn bản.
 
 3. **Xử Lý Ảnh và Video:**
+
    - Nhận diện khuôn mặt và xác định người trong ảnh.
    - Tăng cường ảnh hoặc video để cải thiện chất lượng.
    - Nhận diện và phân loại đối tượng trong video.
 
 4. **Dữ Đoán Chuỗi Thời Gian:**
+
    - Dự đoán doanh số bán hàng cho các mặt hàng cụ thể trong tương lai.
    - Dự đoán giá thị trường cho hàng hóa hoặc dịch vụ.
    - Dự đoán xu hướng người dùng trên mạng xã hội.
 
 5. **Học Tăng Cường (Reinforcement Learning):**
+
    - Huấn luyện robot để thực hiện các nhiệm vụ trong môi trường vật lý.
    - Tối ưu hóa chiến lược chơi trong trò chơi.
    - Quản lý và tối ưu hóa các quy trình tự động.
 
 6. **Phân Tích Dữ Liệu Lớn (Big Data Analytics):**
+
    - Tìm kiếm các mô hình và mối quan hệ trong lượng lớn dữ liệu.
    - Phân tích và dự đoán xu hướng thị trường dựa trên dữ liệu lớn.
    - Tạo các dự đoán và đề xuất hành động dựa trên dữ liệu.
 
 7. **Dự Đoán Y Tế:**
+
    - Dự đoán rủi ro bệnh và chuẩn đoán bệnh dựa trên dữ liệu y tế.
    - Tìm kiếm mối quan hệ trong dữ liệu y tế để đề xuất phác đồ điều trị.
    - Dự đoán kết quả của phác đồ điều trị cho bệnh nhân.
 
 8. **Tư Vấn Tài Chính và Dự Đoán Thị Trường Tài Chính:**
+
    - Tư vấn đầu tư dựa trên mô hình dự đoán thị trường tài chính.
    - Dự đoán giá tài sản, chẳng hạn như bất động sản.
    - Phân loại và phân tích rủi ro trong giao dịch tài chính.
 
 9. **Xử Lý Dữ Liệu và Quản Lý Chuỗi Cung Ứng:**
+
    - Tối ưu hóa quy trình chuỗi cung ứng dựa trên dữ liệu lịch sử.
    - Dự đoán nhu cầu nguồn cung cho sản phẩm hoặc dịch vụ cụ thể.
    - Tối ưu hóa quy trình sản xuất dựa trên dữ liệu hiệu suất.
@@ -647,25 +658,30 @@ Có ba loại chính của Machine Learning:
     - Tạo ra trải nghiệm người dùng cá nhân hóa dựa trên hành vi người dùng.
     - Tự động hóa quy trình kinh doanh và tương tác khách hàng.
 
-
 ### Các loại Machine Learning
+
 1. **Supervised Learning (Học Có Giám Sát):**
+
    - **Mô tả:** Trong học có giám sát, mô hình được đào tạo trên một tập dữ liệu đầu vào và đầu ra đã được gán nhãn. Mục tiêu là học cách ánh xạ từ đầu vào đến đầu ra, sau đó mô hình có thể dự đoán đầu ra cho các dữ liệu mới mà nó chưa thấy trước đó.
    - **Ví dụ:** Dự đoán giá nhà dựa trên các đặc trưng như diện tích, số phòng, vị trí.
 
 2. **Unsupervised Learning (Học Không Giám Sát):**
+
    - **Mô tả:** Trong học không giám sát, mô hình được đào tạo trên dữ liệu không có nhãn. Mục tiêu là tìm kiếm cấu trúc hoặc mô hình ẩn trong dữ liệu mà không cần phải được chương trình cụ thể.
    - **Ví dụ:** Phân loại các đoạn hình ảnh thành các nhóm dựa trên đặc điểm chung mà mô hình tự tìm ra.
 
 3. **Reinforcement Learning (Học Tăng Cường):**
+
    - **Mô tả:** Trong học tăng cường, mô hình học từ trải nghiệm bằng cách tương tác với môi trường và nhận phản hồi. Mục tiêu là tối ưu hóa một hàm thưởng hoặc chi phí thông qua các hành động mà mô hình thực hiện.
    - **Ví dụ:** Huấn luyện một robot để tự động thực hiện các nhiệm vụ trong môi trường vật lý.
 
 4. **Semi-Supervised Learning (Học Bán Giám Sát):**
+
    - **Mô tả:** Kết hợp giữa học có giám sát và không giám sát, loại học này sử dụng một tập dữ liệu lớn không có nhãn và một tập dữ liệu nhỏ có nhãn để đào tạo mô hình.
    - **Ví dụ:** Dự đoán thể loại của các bài viết trên mạng dựa trên một số dữ liệu đã được gán nhãn và một số không được gán nhãn.
 
 5. **Self-Supervised Learning (Học Tự Giám Sát):**
+
    - **Mô tả:** Loại học này sử dụng dữ liệu có sẵn để tạo ra các bài toán giám sát cho chính nó, giúp mô hình tự học mà không cần nhãn nhiều.
    - **Ví dụ:** Tự đặt câu hỏi cho một mô hình để nó học cách biểu diễn dữ liệu.
 
@@ -674,31 +690,41 @@ Có ba loại chính của Machine Learning:
    - **Ví dụ:** Sử dụng một mô hình đã được đào tạo trên dữ liệu hình ảnh để thực hiện một nhiệm vụ phân loại hình ảnh khác.
 
 ### Các thư viện Machine Learning phổ biến
+
 1. **TensorFlow:**
+
    - **Mô tả:** Phát triển bởi Google, TensorFlow là một thư viện mã nguồn mở cho việc xây dựng và triển khai mô hình Machine Learning. Nó hỗ trợ nhiều loại mô hình, từ học sâu (deep learning) đến machine learning cổ điển.
 
 2. **PyTorch:**
+
    - **Mô tả:** PyTorch là một thư viện machine learning mã nguồn mở được phát triển bởi Facebook. Nó rất linh hoạt và thân thiện với người dùng, đặc biệt phù hợp cho lĩnh vực học sâu.
 
 3. **Scikit-Learn:**
+
    - **Mô tả:** Scikit-Learn là một thư viện Python phổ biến cho machine learning. Nó cung cấp các công cụ đơn giản và hiệu quả cho việc xây dựng và đánh giá mô hình ML trong nhiều lĩnh vực.
 
 4. **Keras:**
+
    - **Mô tả:** Keras là một API mô hình học sâu cao cấp được tích hợp trong TensorFlow. Nó cung cấp một cách đơn giản để xây dựng và triển khai các mô hình học sâu.
 
 5. **MXNet:**
+
    - **Mô tả:** MXNet là một framework machine learning mã nguồn mở được thiết kế để đảm bảo hiệu suất và linh hoạt. Nó có thể tích hợp chặt chẽ với nhiều ngôn ngữ lập trình như Python, R, và Scala.
 
 6. **XGBoost:**
+
    - **Mô tả:** XGBoost (eXtreme Gradient Boosting) là một thư viện tối ưu hóa cho các thuật toán boosting. Nó thường được sử dụng để giải quyết các vấn đề phân loại và hồi quy.
 
 7. **LightGBM:**
+
    - **Mô tả:** LightGBM là một framework học máy mã nguồn mở của Microsoft, tập trung vào thuật toán gradient boosting và thường được sử dụng để xử lý các tập dữ liệu lớn.
 
 8. **Pandas:**
+
    - **Mô tả:** Pandas không phải là một thư viện machine learning trực tiếp, nhưng nó là một thư viện quan trọng cho xử lý và phân tích dữ liệu. Nó cung cấp các cấu trúc dữ liệu như DataFrame rất hữu ích cho việc làm việc với dữ liệu.
 
 9. **Numpy:**
+
    - **Mô tả:** Tương tự như Pandas, Numpy không phải là một thư viện machine learning, nhưng nó là một thư viện quan trọng cho tính toán số học trong Python và thường được sử dụng trong các phần lớn của các dự án machine learning.
 
 10. **SciPy:**

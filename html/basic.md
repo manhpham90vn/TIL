@@ -17,6 +17,7 @@ p.class1.class2.class3
 ```
 
 ## Child: >
+
 ```
 nav>ul>li
 
@@ -27,7 +28,8 @@ nav>ul>li
 </nav>
 ```
 
-## Multiplication: *
+## Multiplication: \*
+
 ```
 ul>li*5
 
