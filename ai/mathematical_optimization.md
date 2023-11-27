@@ -2,7 +2,7 @@
 
 - là một lĩnh vực trong toán học và khoa học máy tính nghiên cứu về cách tìm giá trị tốt nhất (tối ưu) cho một hàm mục tiêu dưới sự điều kiện của một số ràng buộc. Mục tiêu của tối ưu hóa là tìm ra giải pháp tối ưu, tức là giá trị của hàm mục tiêu là tối đa hoặc tối thiểu.
 
-Các vấn đề tối ưu hóa xuất hiện trong nhiều lĩnh vực khác nhau như kinh tế, kỹ thuật, công nghệ, quản lý chuỗi cung ứng, và nhiều lĩnh vực khác. Các bài toán tối ưu hóa có thể được chia thành hai loại chính:
+- Các vấn đề tối ưu hóa xuất hiện trong nhiều lĩnh vực khác nhau như kinh tế, kỹ thuật, công nghệ, quản lý chuỗi cung ứng, và nhiều lĩnh vực khác. Các bài toán tối ưu hóa có thể được chia thành hai loại chính:
 
 1. **Tối ưu hóa không ràng buộc (Unconstrained Optimization):** Trong trường hợp này, chúng ta cần tìm giá trị cực đại hoặc cực tiểu của một hàm mục tiêu mà không có ràng buộc nào.
 
@@ -110,21 +110,24 @@ Các vấn đề tối ưu hóa xuất hiện trong nhiều lĩnh vực khác nh
    - Optimizely là một bản fork của Optuna, được tối ưu hóa đặc biệt cho các bài toán tối ưu hóa "hộp đen" (black-box optimization).
 
 ## Example
-### Đề bài
-- Một xí nghiệp cần sản xuất 3 loại bánh: bánh đậu xanh, bánh thập cẩm và bánh
-dẻo. Lượng nguyên liệu đường, đậu cho một bánh mỗi loại, lượng dự trữ nguyên liệu, tiền
-lãi cho một bánh mỗi loại được cho trong bảng sau:
 
-|  Nguyên liệu |  Bánh đậu xanh |  Bánh thập cẩm | Bánh dẻo  |  Lượng dự trữ |
-|---|---|---|---|---|
-| Đường  | 0,04kg  |  0,06kg | 0,05kg  |  500kg |
-|  Đậu |  0,07kg |0kg   | 0,02kg  | 300kg  |
-|  Lãi |  3000 |2000   | 2500  |
+### Đề bài
+
+- Một xí nghiệp cần sản xuất 3 loại bánh: bánh đậu xanh, bánh thập cẩm và bánh
+  dẻo. Lượng nguyên liệu đường, đậu cho một bánh mỗi loại, lượng dự trữ nguyên liệu, tiền
+  lãi cho một bánh mỗi loại được cho trong bảng sau:
+
+| Nguyên liệu | Bánh đậu xanh | Bánh thập cẩm | Bánh dẻo | Lượng dự trữ |
+| ----------- | ------------- | ------------- | -------- | ------------ |
+| Đường       | 0,04kg        | 0,06kg        | 0,05kg   | 500kg        |
+| Đậu         | 0,07kg        | 0kg           | 0,02kg   | 300kg        |
+| Lãi         | 3000          | 2000          | 2500     |
 
 - Hãy lập mô hình bài toán tìm số lượng mỗi loại bánh cần sản xuất sao cho không bị động
-về nguyên liệu mà lãi đạt được cao nhất. 
+  về nguyên liệu mà lãi đạt được cao nhất.
 
 ### Giải
+
 ```python
 from pulp import LpProblem, LpMaximize, LpVariable
 
@@ -153,11 +156,13 @@ print("Số lượng bánh thập cẩm:", y.value())
 print("Số lượng bánh dẻo:", z.value())
 print("Tổng lãi tối đa đạt được:", problem.objective.value())
 ```
+
 ### Output
+
 ```shell
-Welcome to the CBC MILP Solver 
-Version: 2.10.3 
-Build Date: Dec 15 2019 
+Welcome to the CBC MILP Solver
+Version: 2.10.3
+Build Date: Dec 15 2019
 
 command line - /home/manh/Project/lpPro/venv/lib/python3.6/site-packages/pulp/solverdir/cbc/linux/64/cbc /tmp/2b082758156842b196b05f49b4617c61-pulp.mps max timeMode elapsed branch printingOptions all solution /tmp/2b082758156842b196b05f49b4617c61-pulp.sol (default strategy 1)
 At line 2 NAME          MODEL
