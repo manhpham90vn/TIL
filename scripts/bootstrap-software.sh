@@ -44,9 +44,11 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # https://docs.docker.com/engine/install/linux-postinstall/
+sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
-sudo chmod 666 /var/run/docker.sock
+sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+sudo chmod g+rwx "$HOME/.docker" -R
 
 # docker-compose
 # https://docs.docker.com/compose/install/standalone/
