@@ -10,8 +10,14 @@ docker exec -it --user postgres container_id bash
 # build image
 docker build .
 
-# run
-docker run -p 80:80 container_id
+# list images
+docker images
 
-# stop
+# run image
+docker run -p 80:80 -d --rm --name container_name image_id
+
+# stop container
 docker stop container_id
+
+# start container with interactive
+docker start -a -i container_id
