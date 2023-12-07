@@ -1,6 +1,0 @@
-tap "homebrew/bundle"
-brew "vim"
-cask "dbeaver-community"
-cask "google-chrome"
-cask "keepassxc"
-cask "visual-studio-code"
